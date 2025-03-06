@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Climi della Terra</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://staticgeopop.akamaized.net/wp-content/uploads/sites/32/2022/09/RECORD-DELLA-TERRA-Geopop.jpg?im=Resize,width=980;');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0);
+            z-index: -1;
+        }
+
+        .top-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1rem;
+            position;
+            top: 0;
+            left: 0;
+            background-color;
+            padding: 0,5rem;
+            border-radius: 8px;
+        }
+
+        .top-buttons button {
+            background-color: #4662b4;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0,5rem;
+        }
+
+        .top-buttons button:hover {
+            background-color: #004f99;
+        }
+
+        header {
+            background-color: rgba(70, 100, 100, 0.5);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            border-bottom: 2px solid white;
+        }
+
+        .content {
+            margin: 2rem;
+            text-align: center;
+        }
+
+        .info {
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            max-width: 70%;
+            margin: auto;
+        }
+
+        .info h2 {
+            color: #ffffff;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 2rem;
+        }
+
+        .buttons button {
+            background-color: #4682b4;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .buttons button:hover {
+            background-color: #005f99;
+        }
+
+        .flora-fauna-images {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .flora-fauna-images img {
+            width: 400px;
+            height: 400px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .flora-fauna-images img:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="top-buttons">
+        <button onclick="showBlankPage()">TIC</button>
+        <button onclick="showHome()">🏠</button>
+        <button onclick="window.open('https://wordwall.net/play/85883/328/522')">Cruciverba</button>
+        <button onclick="window.open('https://app.Lumi.education/run/c_tL3S')">Game Map</button>
+	<button onclick="window.open('https://learningapps.org/view39030392')">Memory</button>
+	<button onclick="window.open('https://interacty.me/projects/379bdc1d30d270ec')">Quiz</button>
+    </div>
+
+    <header id="home">
+        <h1>I Climi della Terra</h1>
+        <p>Esplora i diversi climi e scopri la flora e la fauna che li caratterizzano.</p>
+    </header>
+
+    <div class="content">
+        <div class="info" id="infoBox">
+            <h2>Benvenuto!</h2>
+            <p>Seleziona un clima per visualizzare flora, fauna e caratteristiche principali.</p>
+            <div class="buttons">
+                <button onclick="showInfo('polari')">Climi Polari</button>
+                <button onclick="showInfo('temperati')">Climi Temperati</button>
+                <button onclick="showInfo('tropicali')">Climi Tropicali</button>
+                <button onclick="showInfo('aridi')">Climi Aridi</button>
+                <button onclick="showInfo('montani')">Climi Montani</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const infoData = {
+            polari: {
+                title: "Climi Polari",
+                description: `
+                    <p align= "justify">I climi polari si trovano nelle regioni più estreme della Terra, vicino ai poli, come l'Artide e l'Antartide. 
+                    Sono caratterizzati da temperature estremamente basse durante tutto l'anno, con estati brevi e fresche e inverni
+		    lunghi e gelidi. La presenza di ghiaccio perenne è una caratteristica distintiva, e il terreno è spesso ricoperto
+                    di neve e ghiaccio. La vegetazione è scarsa, con la tundra che ospita licheni, muschi e alcune piante erbacee 
+                    resistenti al freddo. La fauna comprende animali adattati a queste condizioni estreme, come orsi polari, foche, 
+                    pinguini e volpi artiche. Gli ecosistemi polari sono fragili e particolarmente vulnerabili ai cambiamenti climatici,
+                    che stanno causando il rapido scioglimento dei ghiacci. Nonostante l'apparente isolamento, queste regioni svolgono 
+                    un ruolo cruciale nella regolazione del clima globale. Le acque fredde polari influenzano le correnti oceaniche, 
+                    fondamentali per l'equilibrio termico del pianeta.</p>
+                `,
+                floraImage: "https://www.icsedegliano.it/wp-content/uploads/2024/07/licheni-1024x683.jpg",
+                faunaImage: "https://upload.wikimedia.org/wikipedia/commons/6/66/Polar_Bear_-_Alaska_%28cropped%29.jpg",
+                buttons: '<button onclick="showInfo(\'montani\')">Climi Montani</button><button onclick="showInfo(\'temperati\')">Climi Temperati</button>'
+            },
+            temperati: {
+                title: "Climi Temperati",
+                description: `
+                    <p align= "justify">I climi temperati si trovano nelle fasce intermedie tra i tropici e le regioni polari, caratterizzati da stagioni ben definite. 
+                    Le estati sono calde ma non eccessivamente torride, mentre gli inverni sono generalmente miti o moderatamente freddi. 
+                    La vegetazione varia enormemente: si passa dalle foreste di latifoglie, come querce e faggi, alle praterie sconfinate. 
+                    Gli alberi decidui perdono le foglie in autunno, contribuendo a un ciclo naturale di fertilità del suolo. 
+                    La fauna è altrettanto diversificata, con mammiferi come cervi, volpi e lupi, insieme a una ricca avifauna e insetti impollinatori. 
+                    I climi temperati sono spesso associati alle aree più densamente popolate e sviluppate del pianeta, grazie alla loro favorevole abitabilità. 
+                    Tuttavia, questi ecosistemi sono vulnerabili alle attività umane, come la deforestazione e l'urbanizzazione. 
+                    Le piogge sono distribuite in modo relativamente uniforme durante l'anno, contribuendo alla ricchezza di flora e fauna.</p>
+                `,
+                floraImage: "https://www.giardinaggio.it/giardino/piante/querce_NG2.jpg",
+                faunaImage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSne0yfuF34-yFKGLpjkS9pUMH4EpHqZHt1OTaG77kByrVfkiIgWOURw40&s",
+                buttons: '<button onclick="showInfo(\'polari\')">Climi Polari</button><button onclick="showInfo(\'tropicali\')">Climi Tropicali</button>'
+            },
+            tropicali: {
+                title: "Climi Tropicali",
+                description: `
+                    <p align= "justify">I climi tropicali si sviluppano nelle zone equatoriali e sono noti per il caldo costante e l'umidità elevata. 
+                    Qui si trovano le foreste pluviali, spesso chiamate "i polmoni della Terra", che ospitano una biodiversità impressionante. 
+                    La vegetazione è rigogliosa e comprende piante come alberi di mogano, palme, liane e orchidee. 
+                    Le piogge torrenziali sono frequenti e contribuiscono a un ciclo ecologico unico. 
+                    La fauna è straordinariamente variegata: scimmie, tigri, serpenti, uccelli tropicali e innumerevoli specie di insetti. 
+                    Questi ambienti giocano un ruolo fondamentale nel mantenimento dell'equilibrio atmosferico globale. 
+                    Tuttavia, la deforestazione per l'agricoltura e l'allevamento rappresenta una grave minaccia per gli ecosistemi tropicali. 
+                    Le temperature medie annuali superano spesso i 25°C, rendendo queste aree calde ma straordinariamente vitali.</p>
+                `,
+                floraImage: "https://images.pexels.com/photos/29487188/pexels-photo-29487188.jpeg?auto=compress&cs=tinysrgb&w=600",
+                faunaImage: "https://images.pexels.com/photos/247615/pexels-photo-247615.jpeg?auto=compress&cs=tinysrgb&w=600",
+                buttons: '<button onclick="showInfo(\'temperati\')">Climi Temperati</button><button onclick="showInfo(\'aridi\')">Climi Aridi</button>'
+            },
+            aridi: {
+                title: "Climi Aridi",
+                description: `
+                    <p align= "justify">I climi aridi si trovano nelle regioni desertiche del mondo, come il Sahara e il Deserto di Atacama. 
+                    Sono caratterizzati da precipitazioni scarse o assenti, spesso inferiori a 250 mm all'anno. 
+                    La vegetazione è rara e specializzata, con piante come cactus, acacie e altre specie xerofile in grado di conservare acqua. 
+                    Gli animali che abitano questi ambienti hanno sviluppato adattamenti unici, come il cammello, noto per resistere lunghi periodi senza acqua. 
+                    I deserti di sabbia, come il Sahara, contrastano con quelli rocciosi o semi-aridi, come il Mojave negli Stati Uniti. 
+                    Le temperature possono essere estreme, con giornate torride e notti sorprendentemente fredde. 
+                    Nonostante la loro aridità, i deserti ospitano ecosistemi complessi e spesso sottovalutati.</p>
+                `,
+                floraImage: "https://images.pexels.com/photos/1001435/pexels-photo-1001435.jpeg?auto=compress&cs=tinysrgb&w=600",
+                faunaImage: "https://www.meteoweb.eu/wp-content/uploads/2017/12/cammello-768x576.jpg.webp",
+                buttons: '<button onclick="showInfo(\'tropicali\')">Climi Tropicali</button><button onclick="showInfo(\'montani\')">Climi Montani</button>'
+            },
+            montani: {
+                title: "Climi Montani",
+                description: `
+                    <p align= "justify">I climi montani si trovano in alta quota, dove l'altitudine influenza fortemente le condizioni climatiche. 
+                    Le temperature diminuiscono man mano che si sale, creando una varietà di microclimi lungo le pendici delle montagne. 
+                    La vegetazione include pini, abeti, rododendri e prati alpini, spesso interrotti da rocce e ghiacciai. 
+                    Gli animali montani, come stambecchi, aquile e marmotte, sono adattati a condizioni difficili e alla scarsità di ossigeno. 
+                    Le catene montuose fungono da serbatoi d'acqua, alimentando fiumi e laghi essenziali per le comunità a valle. 
+                    Tuttavia, i climi montani sono vulnerabili ai cambiamenti climatici, con il ritiro dei ghiacciai che rappresenta una preoccupazione globale. 
+                    La bellezza di queste regioni attrae turisti e appassionati di escursionismo, ma richiede una gestione attenta per prevenire danni ambientali.</p>
+                `,
+                floraImage: "https://images.pexels.com/photos/1179229/pexels-photo-1179229.jpeg?auto=compress&cs=tinysrgb&w=600",
+                faunaImage: "https://images.pexels.com/photos/3613420/pexels-photo-3613420.jpeg?auto=compress&cs=tinysrgb&w=600",
+                buttons: '<button onclick="showInfo(\'aridi\')">Climi Aridi</button><button onclick="showHome()">Climi</button>'
+            }
+        };
+
+        function showInfo(climate) {
+            const infoBox = document.getElementById('infoBox');
+            const climateInfo = infoData[climate];
+            infoBox.innerHTML = `
+                <h2>${climateInfo.title}</h2>
+                <p>${climateInfo.description}</p>
+                <div class="flora-fauna-images">
+                    <img src="${climateInfo.floraImage}" alt="Flora ${climateInfo.title}">
+                    <img src="${climateInfo.faunaImage}" alt="Fauna ${climateInfo.title}">
+                </div>
+                <div class="buttons">${climateInfo.buttons}</div>
+            `;
+        }
+
+        function showHome() {
+            const infoBox = document.getElementById('infoBox');
+            infoBox.innerHTML = `
+                <h2>Benvenuto!</h2>
+                <p>Seleziona un clima per visualizzare flora, fauna e caratteristiche principali.</p>
+                <div class="buttons">
+                    <button onclick="showInfo('polari')">Climi Polari</button>
+                    <button onclick="showInfo('temperati')">Climi Temperati</button>
+                    <button onclick="showInfo('tropicali')">Climi Tropicali</button>
+                    <button onclick="showInfo('aridi')">Climi Aridi</button>
+                    <button onclick="showInfo('montani')">Climi Montani</button>
+                </div>
+            `;
+        }
+
+        function showBlankPage() {
+            const infoBox = document.getElementById('infoBox');
+            infoBox.innerHTML = `
+                <div style="display: flex; justify-content: center; align-items: center;">
+                    <h1>
+			<p align= "justify" style="font-size: 1.2rem;">Il sito vuole sensibilizzare sulle differenze climatiche e sugli ecosistemi, 
+		        mostrando come ogni ambiente abbia un equilibrio unico e importante per il pianeta. Inoltre, sottolinea 
+			implicitamente il legame tra i climi e le problematiche ambientali (ad esempio, si accenna ai cambiamenti 
+			climatici nei climi polari). È un progetto che unisce didattica, interattività e sensibilizzazione 
+			ambientale in un formato semplice e accessibile.
+			L'utente viene accolto con un messaggio di benvenuto e l'invito a selezionare un tipo di clima.
+			Sono presenti giochi educativi come cruciverba, quiz e memory game, che rendono l'apprendimento 
+			più coinvolgente.  Il sito punta a rendere l’argomento accessibile e divertente, adatto soprattutto 
+			a studenti o persone curiose.</p>
+</h1>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>
